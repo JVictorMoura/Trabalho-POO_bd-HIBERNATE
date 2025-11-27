@@ -24,4 +24,8 @@ public class Usuario{
 
     public Boolean getAtivo() { return ativo; }
     public void setAtivo(Boolean ativo) { this.ativo = ativo; }
+
+    public void mostrarInfo(){
+
+    }
 }

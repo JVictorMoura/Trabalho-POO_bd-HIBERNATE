@@ -1,3 +1,7 @@
+
+// criar DAO para cada classe que vai virar uma entidade no banco de dados, pode dar ctrl C + V, so precisa trocar o nome das classes no novo documento
+
+
 package dao;
 
 import java.util.ArrayList;
@@ -29,7 +33,7 @@ public class UsuarioDAO {
         sessionFactory.close();
     }
 
-    public void salvarPessoa(Usuario usuario) {
+    public void salvarUsuario(Usuario usuario) {
         Transaction transaction = null;
         try (Session session = sessionFactory.openSession()) {
             transaction = session.beginTransaction();
@@ -49,11 +53,11 @@ public class UsuarioDAO {
         }
     }
 
-    public void atualizarPessoa(Usuario usuario) {
+    public void atualizarUsuario(Usuario usuario) {
         Transaction transaction = null;
         try (Session session = sessionFactory.openSession()) {
             transaction = session.beginTransaction();
-            session.update(pessoa);
+            session.update(usuario);
             transaction.commit();
         } catch (Exception e) {
             if (transaction != null) {
@@ -63,7 +67,7 @@ public class UsuarioDAO {
         }
     }
 
-    public void deletarPessoa(Usuario usuario) {
+    public void deletarUsuario(Usuario usuario) {
         Transaction transaction = null;
         try (Session session = sessionFactory.openSession()) {
             transaction = session.beginTransaction();
@@ -78,12 +82,12 @@ public class UsuarioDAO {
     }
 
     /**
-     * Retorna todos os registros de Pessoa como um ArrayList.
-     * @return ArrayList de Pessoas
+     * Retorna todos os registros de Usuario como um ArrayList.
+     * @return ArrayList de Usuarios
      */
     public ArrayList<Usuario> getTodasUsuarios() {
         try (Session session = sessionFactory.openSession()) {
-            Query<Usuario> query = session.createQuery("FROM Pessoa", Usuario.class);
+            Query<Usuario> query = session.createQuery("FROM Usuario", Usuario.class);
             List<Usuario> usuariosList = query.list();
             
             // Converte a List para ArrayList explicitamente, se necessário

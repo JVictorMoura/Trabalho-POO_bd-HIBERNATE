@@ -1,43 +1,27 @@
+package model;
+
 import jakarta.persistence.*;
-package main.java.model;
 
-@Entity
-@Table(name = "produtos")
-public class Usuario {
-  private Integer id;
-  private String nome;
-  private Integer cpf;
-  private Boolean ativo;
+@MappedSuperclass
+public class Usuario{
 
-  public Integer getId() {
-    return id;
-  }
+    private Integer idade;
 
-  public void setId(Integer id) {
-    this.id = id;
-  }
+    private String nome;
 
-  public String getNome() {
-    return nome;
-  }
+    private Integer cpf;
 
-  public void setNome(String nome) {
-    this.nome = nome;
-  }
+    private Boolean ativo;
 
-  public Integer getCpf() {
-    return cpf;
-  }
+    public Integer getidade() { return idade; }
+    public void setIdade(Integer idade) { this.idade = idade; }
 
-  public void setCpf(Integer cpf) {
-    this.cpf = cpf;
-  }
+    public String getNome() { return nome; }
+    public void setNome(String nome) { this.nome = nome; }
 
-  public Boolean getAtivo() {
-    return ativo;
-  }
+    public Integer getCpf() { return cpf; }
+    public void setCpf(Integer cpf) { this.cpf = cpf; }
 
-  public void setAtivo(Boolean ativo) {
-    this.ativo = ativo;
-  }
+    public Boolean getAtivo() { return ativo; }
+    public void setAtivo(Boolean ativo) { this.ativo = ativo; }
 }

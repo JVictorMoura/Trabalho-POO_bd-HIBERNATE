@@ -1,0 +1,9 @@
+util\HibernateUtil.class
+dao\FuncionarioDAO.class
+model\Funcionario.class
+dao\ProdutoDAO.class
+model\Cliente.class
+model\Produto.class
+dao\ClienteDAO.class
+model\Usuario.class
+main\Main.class
